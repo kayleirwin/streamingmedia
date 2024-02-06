@@ -222,13 +222,13 @@ audio::-webkit-media-controls-enclosure{
     background: var(--drkest-blue);
     border-radius: 5px;
 }
-#trendingsongs h3{
+#trendingsongs h2{
     color: var(--plum);
     text-transform: uppercase;
     font-weight: bold;
-    margin-bottom: 15px;
+    padding: 20px;
 }
-#yourplaylists{
+#yourplaylists .scroll{
     background-color: var(--light-sky);
     height: fit-content;
     overflow-x: auto;
@@ -245,12 +245,17 @@ audio::-webkit-media-controls-enclosure{
     text-transform: uppercase;
     font-weight: bold;
 }
+#yourplaylists h2{
+    padding: 20px;
+    margin: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
 #yourplaylists p{
     text-align: center;
 }
-#curated{
+#curated .scroll{
     background-color: var(--drk-blue-light);
-    padding-bottom: 10px;
 }
 #curated section{
     background-color: var(--drk-blue-med);
@@ -262,6 +267,13 @@ audio::-webkit-media-controls-enclosure{
     margin: 10px;
     text-transform: uppercase;
     font-weight: bold;
+}
+#curated h2{
+    padding: 20px;
+    margin: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    
 }
 #curated p{
     text-align: center;
@@ -295,6 +307,28 @@ ul {
     overflow: hidden;
     max-height: 0;
     transition: max-height .2s ease-out;
+    height: 285px;
+    background-color: var(--cobalt);
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    z-index: 1;
+}
+li{
+    padding: 10px;
+    width: 100%; 
+    font-variant: small-caps;
+}
+li:nth-child(n+2) a{ 
+    width: fit-content;
+    text-transform: uppercase;
+}
+li:nth-child(1) a{
+    font-size: 1.75em;
+    
+}
+li:hover{
+    background-color: var(--plum);
 }
 label {
     cursor: pointer;
@@ -331,6 +365,8 @@ input {
 }
 input:checked ~ ul {
     max-height: 500px;
+    text-align: center;
+    padding-right: 10px;
 }
 input:checked ~ label span {
     background: transparent;
@@ -355,12 +391,52 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     }
     li{
         margin: 5px;
-        text-transform: uppercase;
+    
+    }
+    li:hover{
+        color: var(--plum);
     }
     label span, input {
         display: none;
     }
     body{
         width: 834px;
+    }
+     #yourplaylists{
+        width: 50%;
+    }
+    .scroll-pc{
+        display: flex;
+    }
+    #curated{
+        width: 50%;
+    }
+    #yourplaylists .scroll{
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        height: 400px;
+    }
+    #curated .scroll{
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        height: 400px;
+        
+    }
+    #curated img{
+        float: left;
+    }
+    #yourplaylists img{
+        float: left;
+    }
+
+    .trending{
+        position: relative;
+        left: 600px;
+    }
+    li:hover{
+        width: fit-content;
+        
     }
 }
